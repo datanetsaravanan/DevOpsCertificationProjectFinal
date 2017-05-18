@@ -30,6 +30,35 @@
           <warSourceDirectory>WebContent</warSourceDirectory>
         </configuration>
       </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-pmd-plugin</artifactId>
+        <version>3.2</version>
+        <configuration>
+          <targetJdk>1.8</targetJdk>
+          <aggregate>true</aggregate>
+          <format>html</format>
+          <rulesets>
+            <ruleset>/pmd-rules.xml</ruleset>
+          </rulesets>
+          <!-- CPD options -->
+          <minimumTokens>20</minimumTokens>
+          <ignoreIdentifiers>true</ignoreIdentifiers>
+        </configuration>
+      </plugin>
     </plugins>
   </build>
+  <dependency>
+    <groupId>javax.servlet</groupId>
+    <artifactId>javax.servlet-api</artifactId>
+    <version>3.0.1</version>
+    <scope>compile</scope>
+  </dependency>
+
+  <dependency>
+    <groupId>junit</groupId>
+    <artifactId>junit</artifactId>
+    <version>4.7</version>
+    <scope>test</scope>
+  </dependency>
 </project>
